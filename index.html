@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flair - Commerce that knows when to show up</title>
+<meta name="description" content="Flair is a commerce SDK: product discovery and checkout inside your own app. Placeholder copy - edit content in index.html.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#"><span class="mark" aria-hidden="true"></span>flair</a>
+    <nav class="nav-links">
+      <div class="dd"><button>Product <span class="chev"></span></button>
+        <div class="dd-menu">
+          <a href="#understand"><b>Understand</b><span>Read intent from context</span></a>
+          <a href="#act"><b>Act</b><span>Checkout inside your app</span></a>
+          <a href="#learn"><b>Learn</b><span>Outcomes after the order</span></a>
+        </div>
+      </div>
+      <div class="dd"><button>Developers <span class="chev"></span></button>
+        <div class="dd-menu">
+          <a href="#"><b>Docs</b><span>Guides and API reference</span></a>
+          <a href="#"><b>SDKs</b><span>TypeScript, Swift, Kotlin</span></a>
+          <a href="#"><b>Changelog</b><span>What shipped this week</span></a>
+        </div>
+      </div>
+      <a href="#faq">Pricing</a>
+    </nav>
+    <a class="btn btn-ghost" href="#">Sign in</a>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="dots" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <p class="ticker mono"><span id="ticker">0</span> shopping moments handled by Flair</p>
+    <h1 class="hero-title">Add commerce to your app <span class="marker"><span class="marker-bg"></span>without sending</span> users anywhere else</h1>
+    <p class="hero-sub">Flair is an SDK that turns what your product already knows into the right purchase - <span class="cycle" id="cycle">discovery</span> and checkout, all inside your own experience.</p>
+    <div class="hero-cta">
+      <button class="btn btn-dark" id="copyBtn"><span class="ico-copy"></span><span id="copyLabel">npm i @flair/sdk</span></button>
+      <a class="btn btn-blue" href="#">Start building</a>
+    </div>
+    <div class="chips" aria-hidden="true">
+      <span class="chip c1"><i style="background:#7b5cd6"></i></span>
+      <span class="chip c2"><i style="background:#d9533b;border-radius:50%"></i></span>
+      <span class="chip c3"><i style="background:#2f8f5b"></i></span>
+      <span class="chip c4"><i style="background:#e0a526;border-radius:50%"></i></span>
+    </div>
+  </div>
+  <div class="wrap cards3">
+    <article class="card aud reveal">
+      <div class="aud-art art-agent" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="eyebrow mono">For AI apps</p>
+      <h3>Let your assistant finish the job</h3>
+      <p>Your product already knows the plan. Flair turns it into items, prices and a checkout the user can approve in one tap.</p>
+      <a class="more" href="#">Explore <span class="arr">&rarr;</span></a>
+    </article>
+    <article class="card aud reveal">
+      <div class="aud-art art-dev" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="eyebrow mono">For developers</p>
+      <h3>One SDK from intent to order</h3>
+      <p>Drop in composable components or call the API directly. No merchant integrations to build or keep alive.</p>
+      <a class="more" href="#">Explore <span class="arr">&rarr;</span></a>
+    </article>
+    <article class="card aud reveal">
+      <div class="aud-art art-biz" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="eyebrow mono">For product teams</p>
+      <h3>Ship shopping that users trust</h3>
+      <p>Flair only speaks up when buying actually helps. Measure the value you add, not just clicks.</p>
+      <a class="more" href="#">Explore <span class="arr">&rarr;</span></a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ UNDERSTAND ============ -->
+<section class="block" id="understand">
+  <div class="wrap bento">
+    <div class="intro reveal">
+      <p class="eyebrow mono">Understand</p>
+      <h2>Start from context, not a search box</h2>
+      <p class="lede">Plans, profiles, lists and conversations become structured needs. Flair decides whether shopping belongs in the moment at all.</p>
+      <a class="more" href="#">How intent works <span class="arr">&rarr;</span></a>
+    </div>
+    <article class="card feat reveal">
+      <div class="demo demo-search">
+        <div class="searchbar"><span class="mag"></span><span id="typed"></span><span class="caret"></span></div>
+        <div class="results">
+          <div class="rhead mono"><span><i class="dot-g"></i>Item</span><span>Price</span></div>
+          <div class="row"><span class="thumb t1"></span><div><b>Trail shoe, size 10</b><small class="mono">Store A</small></div><em>$89.00</em></div>
+          <div class="row"><span class="thumb t2"></span><div><b>Hydration vest 5L</b><small class="mono">Store B</small></div><em>$64.50</em></div>
+          <div class="row"><span class="thumb t3"></span><div><b>Energy gel, 12 pack</b><small class="mono">Store C</small></div><em>$21.99</em></div>
+          <div class="row fade"><span class="thumb t4"></span><div><b>Merino running socks</b><small class="mono">Store A</small></div><em>$18.00</em></div>
+        </div>
+      </div>
+      <h3>Needs, pulled from the plan</h3>
+      <p>Pass in a training plan, a registry or a chat. Get back ranked items that fit hard constraints like size, budget and delivery date.</p>
+    </article>
+    <article class="card feat reveal">
+      <div class="demo demo-json">
+        <div class="pcard">
+          <div class="pimg"></div>
+          <div><b>Ceramic pour-over set</b><small>kitchen &middot; coffee</small><em>$42.00 <small class="mono">in stock</small></em>
+            <div class="pills"><span class="on">Sand</span><span>Slate</span></div></div>
+        </div>
+        <pre class="code mono" id="jsonCode"></pre>
+      </div>
+      <h3>Every field you need to decide</h3>
+      <p>Images, specs, variants and delivery estimates in one clean shape, ready to render in your own UI.</p>
+    </article>
+    <article class="card feat reveal">
+      <div class="demo demo-compare">
+        <div class="tags"><span>&check; Arrives by Friday</span><span>&check; Under $50</span></div>
+        <div class="offer head"><span class="thumb t2"></span><div><b>Weekend gift box</b><small class="mono">3 options &middot; in stock</small></div></div>
+        <div class="offer best"><span class="sq" style="background:#e07b39"></span><div><b>Option one <i class="badge">best fit</i></b><small class="mono">Thu, 2 days</small></div><em>$44.00</em></div>
+        <div class="offer"><span class="sq" style="background:#5682cd"></span><div><b>Option two</b><small class="mono">Sat, 4 days</small></div><em>$39.00</em></div>
+        <div class="offer fade"><span class="sq" style="background:#8a8a8a"></span><div><b>Option three</b><small class="mono">Mon, 6 days</small></div><em>$52.00</em></div>
+      </div>
+      <h3>Ranked for value, not for clicks</h3>
+      <p>Flair scores each option on what it adds for this user and stays silent when nothing is worth showing.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ ACT ============ -->
+<section class="block" id="act">
+  <div class="wrap bento">
+    <div class="intro reveal">
+      <p class="eyebrow mono">Act</p>
+      <h2>Checkout that never leaves your app</h2>
+      <p class="lede">Hand Flair an item, an address and a spending limit. It completes the purchase and returns a confirmation you can show right away.</p>
+      <a class="more" href="#">See the checkout flow <span class="arr">&rarr;</span></a>
+    </div>
+    <article class="card feat reveal">
+      <div class="demo demo-marquee">
+        <div class="mq"><div class="mq-track"><span>Suggest</span><span>Prepare cart</span><span>Ask to approve</span><span>Buy within limit</span><span>Suggest</span><span>Prepare cart</span><span>Ask to approve</span><span>Buy within limit</span></div></div>
+        <div class="mq rev"><div class="mq-track"><span>Stay silent</span><span>Compare</span><span>Reorder</span><span>Gift wrap</span><span>Stay silent</span><span>Compare</span><span>Reorder</span><span>Gift wrap</span></div></div>
+        <div class="mq"><div class="mq-track"><span>Registry</span><span>Split pay</span><span>Schedule</span><span>Return</span><span>Registry</span><span>Split pay</span><span>Schedule</span><span>Return</span></div></div>
+        <div class="hub"><span class="mark big"></span></div>
+      </div>
+      <h3>You set how far it can go</h3>
+      <p>From a quiet suggestion to a completed order, pick the authority level per moment and per user.</p>
+    </article>
+    <div class="row3">
+      <article class="card feat reveal">
+        <div class="demo demo-toggle"><span class="mono">Sandbox</span><button class="switch" id="sw" aria-label="Toggle sandbox"><span></span></button></div>
+        <h3>Sandbox mode</h3>
+        <p>Rehearse out-of-stock items, price jumps and bad addresses before a real order ever goes through.</p>
+      </article>
+      <article class="card feat reveal">
+        <div class="demo demo-gift"><div class="giftbox"><span class="lid"></span><span class="box"></span><span class="ribbon"></span></div>
+          <div class="note"><small class="mono">Gift note</small><p>"Congrats on the new place!"</p><div class="mono slip">receipt hidden</div></div></div>
+        <h3>Built for gifting</h3>
+        <p>Add a note, hide the price and ship straight to the recipient. Registries work the same way.</p>
+      </article>
+      <article class="card feat dark reveal">
+        <div class="demo demo-term"><pre class="mono" id="term"></pre></div>
+        <h3>Typed SDKs</h3>
+        <p>Generated from one spec, so mistakes show up in your editor instead of in production.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEARN ============ -->
+<section class="block" id="learn">
+  <div class="wrap bento">
+    <div class="intro reveal">
+      <p class="eyebrow mono">After the order</p>
+      <h2>Know what happened next</h2>
+      <p class="lede">Shipping, returns and whether the purchase actually helped come back as one stream of events.</p>
+      <a class="more" href="#">See events <span class="arr">&rarr;</span></a>
+    </div>
+    <article class="card feat reveal">
+      <div class="demo demo-map">
+        <svg viewBox="0 0 400 180" class="route" aria-hidden="true"><path id="routePath" d="M60 130 C 140 20, 260 20, 340 120" fill="none" stroke="#211f1d" stroke-width="2" stroke-dasharray="6 6"/></svg>
+        <span class="pin p1"></span><span class="pin p2"></span><span class="parcel"></span>
+        <div class="steps"><span class="done">Placed</span><span class="done">Shipped</span><span class="now">Delivered</span></div>
+      </div>
+      <h3>One timeline per order</h3>
+      <p>Every update in order, readable from code, with no scraping on your side.</p>
+    </article>
+    <div class="row3">
+      <article class="card feat reveal">
+        <div class="demo demo-ret"><div class="label-card"><b>Return label</b><small class="mono">ready &middot; drop off by Oct 3</small><div class="barcode"></div></div></div>
+        <h3>Easy returns</h3>
+        <p>Start a return with one call. Labels and refunds are tracked for you.</p>
+      </article>
+      <article class="card feat reveal">
+        <div class="demo demo-hooks">
+          <div class="hk-head mono"><span>POST /webhooks/flair</span><i>200</i></div>
+          <ul id="hooks"></ul>
+        </div>
+        <h3>Webhooks for each change</h3>
+        <p>Get a call when an order ships, moves or gets refunded. No polling.</p>
+      </article>
+      <article class="card feat reveal">
+        <div class="demo demo-mail"><div class="mail"><div class="mh"><span class="av">A</span><div><b>Your App</b><small class="mono">hello@yourapp.com</small></div></div><b>Your order is on the way</b><p>Hi Sam, it left the warehouse today and should arrive Thursday.</p><span class="btn btn-blue sm">Track order</span></div></div>
+        <h3>Your brand, end to end</h3>
+        <p>Updates go out under your name, with a tracking page you never have to build.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCALE ============ -->
+<section class="block center">
+  <div class="wrap reveal">
+    <p class="eyebrow mono">Built to scale</p>
+    <h2 class="big">Ready for your busiest day</h2>
+    <p class="lede narrow">Placeholder numbers below - swap in your real metrics.</p>
+    <div class="stats">
+      <div><h3><span class="count" data-to="12">0</span>M+</h3><p>Products indexed</p></div>
+      <div><h3>$<span class="count" data-to="40">0</span>M+</h3><p>Checkout volume</p></div>
+      <div><h3><span class="count" data-to="99">0</span>.9%</h3><p>Uptime</p></div>
+    </div>
+    <p class="live mono"><i class="dot-g pulse"></i> Live: orders in the last seven days</p>
+    <div class="tape"><div class="tape-track" id="tape"></div></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="block" id="faq">
+  <div class="wrap faq-wrap">
+    <h2 class="reveal">Questions teams ask</h2>
+    <div class="faq">
+      <details><summary>How does Flair make money?</summary><p>Placeholder answer. Describe your pricing model here.</p></details>
+      <details><summary>Which stores are covered?</summary><p>Placeholder answer. List supported merchants or catalogs.</p></details>
+      <details><summary>Can users approve before anything is bought?</summary><p>Yes. Every action has an authority level, and approval can be required per user or per moment.</p></details>
+      <details><summary>Can I test without real orders?</summary><p>Sandbox mode simulates the full flow, including failures, with no charges.</p></details>
+      <details><summary>Which markets are supported?</summary><p>Placeholder answer. Add regions here.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="block center cta">
+  <div class="dots" aria-hidden="true"></div>
+  <div class="wrap reveal">
+    <h2 class="big">Your first checkout is a few lines away</h2>
+    <div class="hero-cta"><a class="btn btn-dark" href="#">Read the docs</a><a class="btn btn-blue" href="#">Get an API key</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div><a class="brand" href="#"><span class="mark" aria-hidden="true"></span>flair</a><p class="mono">&copy; <span id="yr"></span> Flair. Placeholder footer.</p></div>
+    <div class="cols">
+      <div><b>Product</b><a href="#understand">Understand</a><a href="#act">Act</a><a href="#learn">Learn</a></div>
+      <div><b>Developers</b><a href="#">Docs</a><a href="#">Status</a><a href="#">Changelog</a></div>
+      <div><b>Company</b><a href="#">About</a><a href="#">Blog</a><a href="#">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
