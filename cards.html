@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flair - ICP card preview</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f4f4f2;color:#141414;-webkit-font-smoothing:antialiased}
+  header{max-width:1240px;margin:0 auto;padding:48px 24px 8px}
+  header h1{font-size:28px;font-weight:700;letter-spacing:-0.02em}
+  header p{margin-top:8px;color:#6b6b6b;font-size:15px}
+  .grid{max-width:1240px;margin:0 auto;padding:32px 24px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+  .card{position:relative;aspect-ratio:736/916;border-radius:28px;overflow:hidden;background:#222;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.08)}
+  .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .card::before{content:"";position:absolute;inset:0 0 auto 0;height:34%;background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,0));z-index:1}
+  .num{position:absolute;top:14px;right:16px;z-index:3;font-size:11px;font-weight:600;color:rgba(255,255,255,.75);background:rgba(0,0,0,.28);padding:3px 8px;border-radius:99px}
+  figcaption{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:8.5% 7% 7%}
+  .name{color:#fff;font-weight:700;font-size:clamp(20px,1.9vw,26px);letter-spacing:-0.03em;line-height:1.1;text-shadow:0 1px 12px rgba(0,0,0,.25)}
+  .panel{background:rgba(255,255,255,.97);border-radius:22px;padding:22px 24px 24px;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+  .panel h3{font-size:clamp(19px,1.75vw,24px);font-weight:700;letter-spacing:-0.035em;line-height:1.15;color:#141414}
+  .panel p{margin-top:10px;font-size:clamp(14px,1.2vw,16px);line-height:1.45;color:#6e6e73}
+</style>
+</head>
+<body>
+  <header>
+    <h1>ICP cards - preview</h1>
+    <p>15 cards. Numbers are only for review and will not appear in the animation.</p>
+  </header>
+  <main class="grid">
+    <figure class="card" id="card-1">
+      <img src="/card-images/couples.jpg" alt="" loading="lazy">
+      <span class="num">01</span>
+      <figcaption>
+        <p class="name">Apps for couples</p>
+        <div class="panel">
+          <h3>Turn plans into purchases</h3>
+          <p>From shared mood and budget, sell the whole date night.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-2">
+      <img src="/card-images/date-night.jpg" alt="" loading="lazy">
+      <span class="num">02</span>
+      <figcaption>
+        <p class="name">Date-night planners</p>
+        <div class="panel">
+          <h3>Sell the details around the plan</h3>
+          <p>Sell dinner kits, flowers, and outfits around the plan.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-3">
+      <img src="/card-images/matchmaking.jpg" alt="" loading="lazy">
+      <span class="num">03</span>
+      <figcaption>
+        <p class="name">Matchmaking apps</p>
+        <div class="panel">
+          <h3>Monetize the first date</h3>
+          <p>From shared interests, sell the first-date gift.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-4">
+      <img src="/card-images/fitness.jpg" alt="" loading="lazy">
+      <span class="num">04</span>
+      <figcaption>
+        <p class="name">Health &amp; fitness apps</p>
+        <div class="panel">
+          <h3>Sell the recovery, not just the plan</h3>
+          <p>From workout history, sell the right recovery gear.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-5">
+      <img src="/card-images/nutrition.jpg" alt="" loading="lazy">
+      <span class="num">05</span>
+      <figcaption>
+        <p class="name">Nutrition apps</p>
+        <div class="panel">
+          <h3>Sell every ingredient in the plan</h3>
+          <p>Turn any meal plan into a shoppable cart.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-6">
+      <img src="/card-images/learning.jpg" alt="" loading="lazy">
+      <span class="num">06</span>
+      <figcaption>
+        <p class="name">Learning apps</p>
+        <div class="panel">
+          <h3>Sell the supplies for the next lesson</h3>
+          <p>Sell the supplies each upcoming lesson needs.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-7">
+      <img src="/card-images/travel.jpg" alt="" loading="lazy">
+      <span class="num">07</span>
+      <figcaption>
+        <p class="name">Travel apps</p>
+        <div class="panel">
+          <h3>Sell what this trip needs</h3>
+          <p>From route and weather, sell what the trip needs.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-8">
+      <img src="/card-images/family.jpg" alt="" loading="lazy">
+      <span class="num">08</span>
+      <figcaption>
+        <p class="name">Family organiser apps</p>
+        <div class="panel">
+          <h3>Sell the restock</h3>
+          <p>From running-low items, sell the household restock.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-9">
+      <img src="/card-images/pet.jpg" alt="" loading="lazy">
+      <span class="num">09</span>
+      <figcaption>
+        <p class="name">Pet-care apps</p>
+        <div class="panel">
+          <h3>Sell care for this specific pet</h3>
+          <p>From breed and sensitivities, sell what this pet needs.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-10">
+      <img src="/card-images/skin.jpg" alt="" loading="lazy">
+      <span class="num">10</span>
+      <figcaption>
+        <p class="name">Skin analysis apps</p>
+        <div class="panel">
+          <h3>Sell the routine for this skin</h3>
+          <p>From skin type, sell a complete routine.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-11">
+      <img src="/card-images/plant.jpg" alt="" loading="lazy">
+      <span class="num">11</span>
+      <figcaption>
+        <p class="name">Plant-care apps</p>
+        <div class="panel">
+          <h3>Sell what this plant needs</h3>
+          <p>From photo and species, sell what the plant needs.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-12">
+      <img src="/card-images/gift.jpg" alt="" loading="lazy">
+      <span class="num">12</span>
+      <figcaption>
+        <p class="name">Gift reminder apps</p>
+        <div class="panel">
+          <h3>Sell the gift, on time</h3>
+          <p>From recipient and budget, sell the gift on time.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-13">
+      <img src="/card-images/wardrobe.jpg" alt="" loading="lazy">
+      <span class="num">13</span>
+      <figcaption>
+        <p class="name">Wardrobe apps</p>
+        <div class="panel">
+          <h3>Sell the missing piece</h3>
+          <p>From closet and occasion, sell the missing piece.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-14">
+      <img src="/card-images/home.jpg" alt="" loading="lazy">
+      <span class="num">14</span>
+      <figcaption>
+        <p class="name">Home design apps</p>
+        <div class="panel">
+          <h3>Sell the finishing touches</h3>
+          <p>From room and style, sell the finishing pieces.</p>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card" id="card-15">
+      <img src="/card-images/parent.jpg" alt="" loading="lazy">
+      <span class="num">15</span>
+      <figcaption>
+        <p class="name">New-parent apps</p>
+        <div class="panel">
+          <h3>Sell what this stage needs</h3>
+          <p>From baby&#x27;s stage, sell the right essentials.</p>
+        </div>
+      </figcaption>
+    </figure>
+  </main>
+</body>
+</html>

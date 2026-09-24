@@ -1,0 +1,17 @@
+[
+  {"id": 1, "name": "Apps for couples", "head": "Turn plans into purchases", "sub": "From shared mood and budget, sell the whole date night.", "image": "/card-images/couples.jpg"},
+  {"id": 2, "name": "Date-night planners", "head": "Sell the details around the plan", "sub": "Sell dinner kits, flowers, and outfits around the plan.", "image": "/card-images/date-night.jpg"},
+  {"id": 3, "name": "Matchmaking apps", "head": "Monetize the first date", "sub": "From shared interests, sell the first-date gift.", "image": "/card-images/matchmaking.jpg"},
+  {"id": 4, "name": "Health & fitness apps", "head": "Sell the recovery, not just the plan", "sub": "From workout history, sell the right recovery gear.", "image": "/card-images/fitness.jpg"},
+  {"id": 5, "name": "Nutrition apps", "head": "Sell every ingredient in the plan", "sub": "Turn any meal plan into a shoppable cart.", "image": "/card-images/nutrition.jpg"},
+  {"id": 6, "name": "Learning apps", "head": "Sell the supplies for the next lesson", "sub": "Sell the supplies each upcoming lesson needs.", "image": "/card-images/learning.jpg"},
+  {"id": 7, "name": "Travel apps", "head": "Sell what this trip needs", "sub": "From route and weather, sell what the trip needs.", "image": "/card-images/travel.jpg"},
+  {"id": 8, "name": "Family organiser apps", "head": "Sell the restock", "sub": "From running-low items, sell the household restock.", "image": "/card-images/family.jpg"},
+  {"id": 9, "name": "Pet-care apps", "head": "Sell care for this specific pet", "sub": "From breed and sensitivities, sell what this pet needs.", "image": "/card-images/pet.jpg"},
+  {"id": 10, "name": "Skin analysis apps", "head": "Sell the routine for this skin", "sub": "From skin type, sell a complete routine.", "image": "/card-images/skin.jpg"},
+  {"id": 11, "name": "Plant-care apps", "head": "Sell what this plant needs", "sub": "From photo and species, sell what the plant needs.", "image": "/card-images/plant.jpg"},
+  {"id": 12, "name": "Gift reminder apps", "head": "Sell the gift, on time", "sub": "From recipient and budget, sell the gift on time.", "image": "/card-images/gift.jpg"},
+  {"id": 13, "name": "Wardrobe apps", "head": "Sell the missing piece", "sub": "From closet and occasion, sell the missing piece.", "image": "/card-images/wardrobe.jpg"},
+  {"id": 14, "name": "Home design apps", "head": "Sell the finishing touches", "sub": "From room and style, sell the finishing pieces.", "image": "/card-images/home.jpg"},
+  {"id": 15, "name": "New-parent apps", "head": "Sell what this stage needs", "sub": "From baby's stage, sell the right essentials.", "image": "/card-images/parent.jpg"}
+]
