@@ -94,7 +94,7 @@ function fit(){document.querySelectorAll('.one').forEach(h=>{h.style.fontSize=''
 const q=new URLSearchParams(location.search),is916=q.get('r')==='916';
 if(is916)document.body.classList.add('r916');
 document.querySelectorAll('#seg button').forEach(b=>{b.classList.toggle('on',(b.dataset.r==='916')===is916);b.onclick=()=>{if(b.dataset.r==='916')q.set('r','916');else q.delete('r');location.search=q.toString();};});
-fetch('/cards.json').then(r=>r.json()).then(cards=>{
+fetch('/cards.json').then(r=>r.json()).then(cards=>{cards=cards.filter(c=>c.id<=15);
  const only=q.get('v'),rq=is916?'&r=916':'';
  document.getElementById('nav').innerHTML=`<a href="/phone2${is916?'?r=916':''}" class="${only?'':'on'}">Compare</a>`+V.map(v=>`<a href="/phone2?v=${v[0]}${rq}" class="${only===v[0]?'on':''}">${v[1]}</a>`).join('');
  const list=only?V.filter(v=>v[0]===only):V,sample=[1,4,9,11];

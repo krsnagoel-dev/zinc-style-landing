@@ -159,7 +159,7 @@ function card(v,c){
 function fit(){ // keep every head on one line: shrink font until it fits
  document.querySelectorAll('.head,.name,.big').forEach(h=>{h.style.fontSize='';let s=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>h.clientWidth+0.5&&s>11){s-=0.5;h.style.fontSize=s+'px';}});
 }
-fetch('/cards.json').then(r=>r.json()).then(cards=>{
+fetch('/cards.json').then(r=>r.json()).then(cards=>{cards=cards.filter(c=>c.id<=15);
  const q=new URLSearchParams(location.search), only=parseInt(q.get('v'));
  const nav=document.getElementById('nav');
  nav.innerHTML=`<a href="/designs" class="${only?'':'on'}">All versions</a>`+VERSIONS.map(v=>`<a href="/designs?v=${v.n}" class="${only===v.n?'on':''}">V${v.n} ${v.t}</a>`).join('');

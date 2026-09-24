@@ -147,7 +147,7 @@ function fit(){document.querySelectorAll('.one').forEach(h=>{h.style.fontSize=''
 const q=new URLSearchParams(location.search);
 if(q.get('r')==='916')document.body.classList.add('r916');
 document.querySelectorAll('#seg button').forEach(b=>{if((q.get('r')==='916')===(b.dataset.r==='916'))b.classList.add('on');else b.classList.remove('on');b.onclick=()=>{q.set('r',b.dataset.r);if(b.dataset.r==='45')q.delete('r');location.search=q.toString();};});
-fetch('/cards.json').then(r=>r.json()).then(cards=>{
+fetch('/cards.json').then(r=>r.json()).then(cards=>{cards=cards.filter(c=>c.id<=15);
  const only=parseInt(q.get('v')), rq=q.get('r')==='916'?'&r=916':'';
  document.getElementById('nav').innerHTML=`<a href="/phone?${rq.slice(1)}" class="${only?'':'on'}">All 10</a>`+V.map(v=>`<a href="/phone?v=${v[0]}${rq}" class="${only===v[0]?'on':''}">${v[0]} ${v[1]}</a>`).join('');
  const list=only?V.filter(v=>v[0]===only):V, sample=[1,4,9,11];
