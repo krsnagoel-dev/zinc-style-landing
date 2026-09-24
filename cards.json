@@ -1,17 +1,326 @@
 [
-  {"id": 1, "name": "Apps for couples", "head": "Turn plans into purchases", "sub": "From shared mood and budget, sell the whole date night.", "image": "/card-images/couples.jpg"},
-  {"id": 2, "name": "Date-night planners", "head": "Sell the details around the plan", "sub": "Sell dinner kits, flowers, and outfits around the plan.", "image": "/card-images/date-night.jpg"},
-  {"id": 3, "name": "Matchmaking apps", "head": "Monetize the first date", "sub": "From shared interests, sell the first-date gift.", "image": "/card-images/matchmaking.jpg"},
-  {"id": 4, "name": "Health & fitness apps", "head": "Sell the recovery, not just the plan", "sub": "From workout history, sell the right recovery gear.", "image": "/card-images/fitness.jpg"},
-  {"id": 5, "name": "Nutrition apps", "head": "Sell every ingredient in the plan", "sub": "Turn any meal plan into a shoppable cart.", "image": "/card-images/nutrition.jpg"},
-  {"id": 6, "name": "Learning apps", "head": "Sell the supplies for the next lesson", "sub": "Sell the supplies each upcoming lesson needs.", "image": "/card-images/learning.jpg"},
-  {"id": 7, "name": "Travel apps", "head": "Sell what this trip needs", "sub": "From route and weather, sell what the trip needs.", "image": "/card-images/travel.jpg"},
-  {"id": 8, "name": "Family organiser apps", "head": "Sell the restock", "sub": "From running-low items, sell the household restock.", "image": "/card-images/family.jpg"},
-  {"id": 9, "name": "Pet-care apps", "head": "Sell care for this specific pet", "sub": "From breed and sensitivities, sell what this pet needs.", "image": "/card-images/pet.jpg"},
-  {"id": 10, "name": "Skin analysis apps", "head": "Sell the routine for this skin", "sub": "From skin type, sell a complete routine.", "image": "/card-images/skin.jpg"},
-  {"id": 11, "name": "Plant-care apps", "head": "Sell what this plant needs", "sub": "From photo and species, sell what the plant needs.", "image": "/card-images/plant.jpg"},
-  {"id": 12, "name": "Gift reminder apps", "head": "Sell the gift, on time", "sub": "From recipient and budget, sell the gift on time.", "image": "/card-images/gift.jpg"},
-  {"id": 13, "name": "Wardrobe apps", "head": "Sell the missing piece", "sub": "From closet and occasion, sell the missing piece.", "image": "/card-images/wardrobe.jpg"},
-  {"id": 14, "name": "Home design apps", "head": "Sell the finishing touches", "sub": "From room and style, sell the finishing pieces.", "image": "/card-images/home.jpg"},
-  {"id": 15, "name": "New-parent apps", "head": "Sell what this stage needs", "sub": "From baby's stage, sell the right essentials.", "image": "/card-images/parent.jpg"}
+  {
+    "id": 1,
+    "name": "Apps for couples",
+    "head": "Turn plans into purchases",
+    "sub": "From shared mood and budget, sell the whole date night.",
+    "image": "/card-images/v3/couples.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#dfcdc7"
+    },
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Date-night planners",
+    "head": "Sell the details around the plan",
+    "sub": "Sell dinner kits, flowers, and outfits around the plan.",
+    "image": "/card-images/v3/date-night.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#e8d6cd"
+    },
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Matchmaking apps",
+    "head": "Monetize the first date",
+    "sub": "From shared interests, sell the first-date gift.",
+    "image": "/card-images/v3/matchmaking.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#f1e0d8"
+    },
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Health & fitness apps",
+    "head": "Sell the recovery, not just the plan",
+    "sub": "From workout history, sell the right recovery gear.",
+    "image": "/card-images/v3/fitness.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#d9d6d7"
+    },
+    "featured": true
+  },
+  {
+    "id": 5,
+    "name": "Nutrition apps",
+    "head": "Sell every ingredient in the plan",
+    "sub": "Turn any meal plan into a shoppable cart.",
+    "image": "/card-images/v3/nutrition.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#dfdcd2"
+    },
+    "featured": true
+  },
+  {
+    "id": 6,
+    "name": "Learning apps",
+    "head": "Sell the supplies for the next lesson",
+    "sub": "Sell the supplies each upcoming lesson needs.",
+    "image": "/card-images/v3/learning.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#e9ded7"
+    },
+    "featured": true
+  },
+  {
+    "id": 7,
+    "name": "Travel apps",
+    "head": "Sell what this trip needs",
+    "sub": "From route and weather, sell what the trip needs.",
+    "image": "/card-images/v3/travel.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#e3e1dd"
+    },
+    "featured": true
+  },
+  {
+    "id": 8,
+    "name": "Family organiser apps",
+    "head": "Sell the restock",
+    "sub": "From running-low items, sell the household restock.",
+    "image": "/card-images/v3/family.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#f4e8de"
+    },
+    "featured": true
+  },
+  {
+    "id": 9,
+    "name": "Pet-care apps",
+    "head": "Sell care for this specific pet",
+    "sub": "From breed and sensitivities, sell what this pet needs.",
+    "image": "/card-images/v3/pet.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#fbe8d5"
+    },
+    "featured": true
+  },
+  {
+    "id": 10,
+    "name": "Skin analysis apps",
+    "head": "Sell the routine for this skin",
+    "sub": "From skin type, sell a complete routine.",
+    "image": "/card-images/v3/skin.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#f9e4dd"
+    },
+    "featured": true
+  },
+  {
+    "id": 11,
+    "name": "Plant-care apps",
+    "head": "Sell what this plant needs",
+    "sub": "From photo and species, sell what the plant needs.",
+    "image": "/card-images/v3/plant.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#e1dcce"
+    },
+    "featured": true
+  },
+  {
+    "id": 12,
+    "name": "Gift reminder apps",
+    "head": "Sell the gift, on time",
+    "sub": "From recipient and budget, sell the gift on time.",
+    "image": "/card-images/v3/gift.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#ecd8d0"
+    },
+    "featured": true
+  },
+  {
+    "id": 13,
+    "name": "Wardrobe apps",
+    "head": "Sell the missing piece",
+    "sub": "From closet and occasion, sell the missing piece.",
+    "image": "/card-images/v3/wardrobe.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#e0dbd9"
+    },
+    "featured": true
+  },
+  {
+    "id": 14,
+    "name": "Home design apps",
+    "head": "Sell the finishing touches",
+    "sub": "From room and style, sell the finishing pieces.",
+    "image": "/card-images/v3/home.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#ded5cd"
+    },
+    "featured": true
+  },
+  {
+    "id": 15,
+    "name": "New-parent apps",
+    "head": "Sell what this stage needs",
+    "sub": "From baby's stage, sell the right essentials.",
+    "image": "/card-images/v3/parent.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#f6eae3"
+    },
+    "featured": true
+  },
+  {
+    "id": 16,
+    "name": "Financial wellness apps",
+    "head": "Sell when the budget says yes",
+    "sub": "When budgets allow, sell the planned purchase.",
+    "image": "/card-images/v3/financial.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#f0e0d4"
+    },
+    "featured": false
+  },
+  {
+    "id": 17,
+    "name": "Dog groomer apps",
+    "head": "Sell the coat-care routine",
+    "sub": "From coat history, sell the right care products.",
+    "image": "/card-images/v3/dog-groomer.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#f3e9e2"
+    },
+    "featured": false
+  },
+  {
+    "id": 18,
+    "name": "Hairstyle apps",
+    "head": "Sell the look",
+    "sub": "Sell the products and tools that recreate the look.",
+    "image": "/card-images/v3/hairstyle.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#e6dad4"
+    },
+    "featured": false
+  },
+  {
+    "id": 19,
+    "name": "Sneaker collection apps",
+    "head": "Sell what the collection lacks",
+    "sub": "From what they own, sell what's missing.",
+    "image": "/card-images/v3/sneaker.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#dbd8d5"
+    },
+    "featured": false
+  },
+  {
+    "id": 20,
+    "name": "Fragrance wardrobe apps",
+    "head": "Sell the next scent",
+    "sub": "From season and collection, sell the next scent.",
+    "image": "/card-images/v3/fragrance.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#f9e8da"
+    },
+    "featured": false
+  },
+  {
+    "id": 21,
+    "name": "Magic learning apps",
+    "head": "Sell the props behind the trick",
+    "sub": "Sell the props the current trick requires.",
+    "image": "/card-images/v3/magic.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#d4d3cf"
+    },
+    "featured": false
+  },
+  {
+    "id": 22,
+    "name": "Cosplay build apps",
+    "head": "Sell the next build",
+    "sub": "From the build plan, sell the materials.",
+    "image": "/card-images/v3/cosplay.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#d9d4d6"
+    },
+    "featured": false
+  },
+  {
+    "id": 23,
+    "name": "Camping survival games",
+    "head": "Sell the gear behind the mission",
+    "sub": "From the mission, sell the real gear.",
+    "image": "/card-images/v3/camping.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#e1d3cb"
+    },
+    "featured": false
+  },
+  {
+    "id": 24,
+    "name": "Couples game apps",
+    "head": "Sell game night",
+    "sub": "Sell the games and snacks for the night.",
+    "image": "/card-images/v3/couples-game.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#e1d1c7"
+    },
+    "featured": false
+  },
+  {
+    "id": 25,
+    "name": "Co-op game apps",
+    "head": "Sell the setup",
+    "sub": "Sell the controllers and setup to play together.",
+    "image": "/card-images/v3/coop-game.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#d9d2db"
+    },
+    "featured": false
+  },
+  {
+    "id": 26,
+    "name": "Cooking apps",
+    "head": "Sell tonight's ingredients",
+    "sub": "From recipe and pantry, sell what's missing.",
+    "image": "/card-images/v3/cooking.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#eaded4"
+    },
+    "featured": false
+  },
+  {
+    "id": 27,
+    "name": "Event-planning apps",
+    "head": "Sell the event",
+    "sub": "From theme and budget, sell the whole event.",
+    "image": "/card-images/v3/event.jpg",
+    "background": {
+      "from": "#fbfaf8",
+      "to": "#f6dfd4"
+    },
+    "featured": false
+  }
 ]

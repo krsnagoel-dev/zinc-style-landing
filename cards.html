@@ -3,200 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flair - ICP card preview</title>
+<title>Flair - ICP cards</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f4f4f2;color:#141414;-webkit-font-smoothing:antialiased}
-  header{max-width:1240px;margin:0 auto;padding:48px 24px 8px}
-  header h1{font-size:28px;font-weight:700;letter-spacing:-0.02em}
-  header p{margin-top:8px;color:#6b6b6b;font-size:15px}
-  .grid{max-width:1240px;margin:0 auto;padding:32px 24px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
-  .card{position:relative;aspect-ratio:736/916;border-radius:28px;overflow:hidden;background:#222;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.08)}
-  .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .card::before{content:"";position:absolute;inset:0 0 auto 0;height:34%;background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,0));z-index:1}
-  .num{position:absolute;top:14px;right:16px;z-index:3;font-size:11px;font-weight:600;color:rgba(255,255,255,.75);background:rgba(0,0,0,.28);padding:3px 8px;border-radius:99px}
-  figcaption{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:8.5% 7% 7%}
-  .name{color:#fff;font-weight:700;font-size:clamp(20px,1.9vw,26px);letter-spacing:-0.03em;line-height:1.1;text-shadow:0 1px 12px rgba(0,0,0,.25)}
-  .panel{background:rgba(255,255,255,.97);border-radius:22px;padding:22px 24px 24px;box-shadow:0 4px 20px rgba(0,0,0,.12)}
-  .panel h3{font-size:clamp(19px,1.75vw,24px);font-weight:700;letter-spacing:-0.035em;line-height:1.15;color:#141414}
-  .panel p{margin-top:10px;font-size:clamp(14px,1.2vw,16px);line-height:1.45;color:#6e6e73}
+:root{--ar:4/5}
+body.r916{--ar:9/16}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Geist,-apple-system,BlinkMacSystemFont,sans-serif;background:#f5f4f1;color:#151515;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1320px;margin:0 auto;padding:0 28px}
+header{padding:56px 0 0}
+header h1{font-family:"Bricolage Grotesque",Geist,sans-serif;font-weight:700;font-size:34px;letter-spacing:-.035em}
+header p{margin-top:6px;color:#7a7a7a;font-size:15px;max-width:640px;line-height:1.5}
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:22px}
+.seg{display:inline-flex;background:#fff;border:1px solid #e6e4df;border-radius:10px;padding:3px}
+.seg a{font-size:13px;font-weight:500;text-decoration:none;padding:7px 12px;border-radius:7px;color:#666}
+.seg a.on{background:#151515;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px;margin:30px 0 90px}
+/* card: final design (B, centered) */
+.card{position:relative;aspect-ratio:var(--ar);border-radius:24px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -22px rgba(0,0,0,.25)}
+.one{white-space:nowrap;overflow:hidden}
+.name{position:absolute;left:18px;right:18px;top:22px;z-index:3;text-align:center;font-family:"Bricolage Grotesque",Geist,sans-serif;font-weight:700;font-size:27px;line-height:1.05;letter-spacing:-.035em;color:#151515}
+.phone{position:absolute;left:50%;transform:translateX(-50%);top:70px;bottom:-40px;width:60%;border-radius:30px;overflow:hidden;z-index:1;border:2px solid #d4d2cd;background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.9) inset,0 22px 44px -16px rgba(0,0,0,.3)}
+.phone .ph{position:absolute;inset:0;background:#ccc center/cover no-repeat}
+.phone::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:30%;height:9px;border-radius:99px;background:#1a1a1a;z-index:2}
+.glass{position:absolute;left:12px;right:12px;bottom:12px;z-index:4;text-align:center;border-radius:18px;padding:12px 15px 13px;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 30px -12px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.9);-webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5)}
+.glass .h{font-size:15.5px;font-weight:600;letter-spacing:-.015em;line-height:1.25;color:#141414}
+.glass .sub{font-size:12.5px;line-height:1.4;margin-top:3px;color:#4d4b48;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 </style>
 </head>
 <body>
-  <header>
-    <h1>ICP cards - preview</h1>
-    <p>15 cards. Numbers are only for review and will not appear in the animation.</p>
-  </header>
-  <main class="grid">
-    <figure class="card" id="card-1">
-      <img src="/card-images/couples.jpg" alt="" loading="lazy">
-      <span class="num">01</span>
-      <figcaption>
-        <p class="name">Apps for couples</p>
-        <div class="panel">
-          <h3>Turn plans into purchases</h3>
-          <p>From shared mood and budget, sell the whole date night.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-2">
-      <img src="/card-images/date-night.jpg" alt="" loading="lazy">
-      <span class="num">02</span>
-      <figcaption>
-        <p class="name">Date-night planners</p>
-        <div class="panel">
-          <h3>Sell the details around the plan</h3>
-          <p>Sell dinner kits, flowers, and outfits around the plan.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-3">
-      <img src="/card-images/matchmaking.jpg" alt="" loading="lazy">
-      <span class="num">03</span>
-      <figcaption>
-        <p class="name">Matchmaking apps</p>
-        <div class="panel">
-          <h3>Monetize the first date</h3>
-          <p>From shared interests, sell the first-date gift.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-4">
-      <img src="/card-images/fitness.jpg" alt="" loading="lazy">
-      <span class="num">04</span>
-      <figcaption>
-        <p class="name">Health &amp; fitness apps</p>
-        <div class="panel">
-          <h3>Sell the recovery, not just the plan</h3>
-          <p>From workout history, sell the right recovery gear.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-5">
-      <img src="/card-images/nutrition.jpg" alt="" loading="lazy">
-      <span class="num">05</span>
-      <figcaption>
-        <p class="name">Nutrition apps</p>
-        <div class="panel">
-          <h3>Sell every ingredient in the plan</h3>
-          <p>Turn any meal plan into a shoppable cart.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-6">
-      <img src="/card-images/learning.jpg" alt="" loading="lazy">
-      <span class="num">06</span>
-      <figcaption>
-        <p class="name">Learning apps</p>
-        <div class="panel">
-          <h3>Sell the supplies for the next lesson</h3>
-          <p>Sell the supplies each upcoming lesson needs.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-7">
-      <img src="/card-images/travel.jpg" alt="" loading="lazy">
-      <span class="num">07</span>
-      <figcaption>
-        <p class="name">Travel apps</p>
-        <div class="panel">
-          <h3>Sell what this trip needs</h3>
-          <p>From route and weather, sell what the trip needs.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-8">
-      <img src="/card-images/family.jpg" alt="" loading="lazy">
-      <span class="num">08</span>
-      <figcaption>
-        <p class="name">Family organiser apps</p>
-        <div class="panel">
-          <h3>Sell the restock</h3>
-          <p>From running-low items, sell the household restock.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-9">
-      <img src="/card-images/pet.jpg" alt="" loading="lazy">
-      <span class="num">09</span>
-      <figcaption>
-        <p class="name">Pet-care apps</p>
-        <div class="panel">
-          <h3>Sell care for this specific pet</h3>
-          <p>From breed and sensitivities, sell what this pet needs.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-10">
-      <img src="/card-images/skin.jpg" alt="" loading="lazy">
-      <span class="num">10</span>
-      <figcaption>
-        <p class="name">Skin analysis apps</p>
-        <div class="panel">
-          <h3>Sell the routine for this skin</h3>
-          <p>From skin type, sell a complete routine.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-11">
-      <img src="/card-images/plant.jpg" alt="" loading="lazy">
-      <span class="num">11</span>
-      <figcaption>
-        <p class="name">Plant-care apps</p>
-        <div class="panel">
-          <h3>Sell what this plant needs</h3>
-          <p>From photo and species, sell what the plant needs.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-12">
-      <img src="/card-images/gift.jpg" alt="" loading="lazy">
-      <span class="num">12</span>
-      <figcaption>
-        <p class="name">Gift reminder apps</p>
-        <div class="panel">
-          <h3>Sell the gift, on time</h3>
-          <p>From recipient and budget, sell the gift on time.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-13">
-      <img src="/card-images/wardrobe.jpg" alt="" loading="lazy">
-      <span class="num">13</span>
-      <figcaption>
-        <p class="name">Wardrobe apps</p>
-        <div class="panel">
-          <h3>Sell the missing piece</h3>
-          <p>From closet and occasion, sell the missing piece.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-14">
-      <img src="/card-images/home.jpg" alt="" loading="lazy">
-      <span class="num">14</span>
-      <figcaption>
-        <p class="name">Home design apps</p>
-        <div class="panel">
-          <h3>Sell the finishing touches</h3>
-          <p>From room and style, sell the finishing pieces.</p>
-        </div>
-      </figcaption>
-    </figure>
-    <figure class="card" id="card-15">
-      <img src="/card-images/parent.jpg" alt="" loading="lazy">
-      <span class="num">15</span>
-      <figcaption>
-        <p class="name">New-parent apps</p>
-        <div class="panel">
-          <h3>Sell what this stage needs</h3>
-          <p>From baby&#x27;s stage, sell the right essentials.</p>
-        </div>
-      </figcaption>
-    </figure>
-  </main>
+<div class="wrap">
+<header>
+  <h1>ICP cards</h1>
+  <p id="intro"></p>
+  <div class="bar"><div class="seg" id="set"></div><div class="seg" id="ratio"></div></div>
+</header>
+<main class="grid" id="grid"></main>
+</div>
+<script>
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const q=new URLSearchParams(location.search),all=q.get('set')==='all',is916=q.get('r')==='916';
+if(is916)document.body.classList.add('r916');
+const link=(k,v)=>{const p=new URLSearchParams(q);if(v)p.set(k,v);else p.delete(k);const s=p.toString();return '/cards'+(s?'?'+s:'');};
+document.getElementById('set').innerHTML=`<a href="${link('set','')}" class="${all?'':'on'}">15 selected</a><a href="${link('set','all')}" class="${all?'on':''}">All 27</a>`;
+document.getElementById('ratio').innerHTML=`<a href="${link('r','')}" class="${is916?'':'on'}">4:5</a><a href="${link('r','916')}" class="${is916?'on':''}">9:16</a>`;
+function fit(){document.querySelectorAll('.one').forEach(h=>{h.style.fontSize='';let s=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>h.clientWidth+.5&&s>10){s-=.5;h.style.fontSize=s+'px';}});}
+fetch('/cards.json').then(r=>r.json()).then(data=>{
+ const cards=all?data:data.filter(c=>c.featured);
+ document.getElementById('intro').textContent=`${cards.length} cards. Final layout: app name on top, thin phone frame, copy centered on a glass card. Copy and images come from cards.json.`;
+ document.getElementById('grid').innerHTML=cards.map(c=>`<div class="card" style="background:linear-gradient(180deg,${c.background.from},${c.background.to})"><div class="name one">${esc(c.name)}</div><div class="phone"><div class="ph" style="background-image:url('${c.image}')"></div></div><div class="glass"><div class="h one">${esc(c.head)}</div><div class="sub">${esc(c.sub)}</div></div></div>`).join('');
+ (document.fonts?document.fonts.ready:Promise.resolve()).then(fit);addEventListener('resize',fit);
+});
+</script>
 </body>
 </html>

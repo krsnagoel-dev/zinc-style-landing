@@ -74,7 +74,7 @@ function card(k,c,i){
 function fit(){document.querySelectorAll('.one').forEach(h=>{h.style.fontSize='';let s=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>h.clientWidth+.5&&s>11){s-=.5;h.style.fontSize=s+'px';}});
  // same text size on every card in a version, so the grid stays even
  document.querySelectorAll('section').forEach(sec=>['.name','.head'].forEach(sel=>{const els=[...sec.querySelectorAll(sel)];if(!els.length)return;const m=Math.min(...els.map(e=>parseFloat(getComputedStyle(e).fontSize)));els.forEach(e=>e.style.fontSize=m+'px');}));}
-fetch('/cards.json').then(r=>r.json()).then(cards=>{
+fetch('/cards.json').then(r=>r.json()).then(cards=>{cards=cards.filter(c=>c.id<=15);
  const only=new URLSearchParams(location.search).get('v');
  document.getElementById('nav').innerHTML=`<a href="/refined" class="${only?'':'on'}">Compare</a>`+V.map(v=>`<a href="/refined?v=${v.k}" class="${only===v.k?'on':''}">${v.t} (all 15)</a>`).join('');
  const list=only?V.filter(v=>v.k===only):V, sample=[1,4,9,13];
