@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flair - card design versions</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#efefec;color:#111;-webkit-font-smoothing:antialiased}
+header{max-width:1320px;margin:0 auto;padding:44px 24px 4px}
+header h1{font-size:28px;font-weight:700;letter-spacing:-.02em}
+header p{margin-top:8px;color:#666;font-size:15px}
+nav{max-width:1320px;margin:18px auto 0;padding:0 24px;display:flex;gap:8px;flex-wrap:wrap}
+nav a{font-size:13px;font-weight:600;color:#111;text-decoration:none;background:#fff;border-radius:99px;padding:7px 13px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+nav a.on{background:#111;color:#fff}
+section{max-width:1320px;margin:0 auto;padding:36px 24px 8px}
+section h2{font-size:20px;font-weight:700;letter-spacing:-.02em}
+section h2 span{color:#999;font-weight:600;margin-right:8px}
+section h2 a{font-size:13px;font-weight:600;color:#666;margin-left:12px}
+section .desc{color:#666;font-size:14px;margin-top:4px}
+.row{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px;margin-top:18px}
+.card{background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.05),0 10px 28px rgba(0,0,0,.07);position:relative}
+.img{background-size:cover;background-position:center}
+.name,.big{white-space:nowrap;overflow:hidden;max-width:100%}
+.head{white-space:nowrap;overflow:hidden;font-weight:700;letter-spacing:-.03em;color:#111}
+.sub{color:#6e6e73;line-height:1.42;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* V1 Stack */
+.v1{padding:12px}
+.v1 .img{aspect-ratio:4/3;border-radius:18px}
+.v1 .txt{padding:18px 10px 12px}
+.v1 .name{font-size:28px;font-weight:800;letter-spacing:-.04em;line-height:1.05}
+.v1 .head{font-size:17px;margin-top:12px;font-weight:600}
+.v1 .sub{font-size:14.5px;margin-top:5px}
+
+/* V2 Name on photo */
+.v2{padding:10px}
+.v2 .imgwrap{position:relative;border-radius:18px;overflow:hidden}
+.v2 .img{aspect-ratio:1/1}
+.v2 .imgwrap::after{content:"";position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,0))}
+.v2 .name{position:absolute;left:18px;right:18px;bottom:16px;z-index:1;color:#fff;font-size:30px;font-weight:800;letter-spacing:-.04em;line-height:1.02}
+.v2 .txt{padding:16px 10px 10px}
+.v2 .head{font-size:18px}
+.v2 .sub{font-size:14.5px;margin-top:5px}
+
+/* V3 Editorial serif */
+.v3{padding:22px 20px 20px}
+.v3 .name{font-family:"Instrument Serif",Georgia,serif;font-size:40px;line-height:1;letter-spacing:-.01em;font-weight:400}
+.v3 .img{aspect-ratio:5/4;border-radius:14px;margin-top:16px}
+.v3 .head{font-size:17px;margin-top:16px}
+.v3 .sub{font-size:14.5px;margin-top:5px}
+
+/* V4 App icon listing */
+.v4{padding:14px}
+.v4 .top{display:flex;align-items:center;gap:12px;padding:4px 4px 14px}
+.v4 .top>div:last-child{min-width:0;flex:1}
+.v4 .icon{width:52px;height:52px;border-radius:14px;flex:none;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.v4 .name{font-size:22px;font-weight:800;letter-spacing:-.035em;line-height:1.1}
+.v4 .kicker{font-size:12px;color:#999;font-weight:600;margin-top:2px}
+.v4 .img{aspect-ratio:4/3;border-radius:16px}
+.v4 .txt{padding:16px 6px 6px}
+.v4 .head{font-size:17px}
+.v4 .sub{font-size:14.5px;margin-top:5px}
+
+/* V5 Black name band */
+.v5 .img{aspect-ratio:4/3}
+.v5 .band{background:#111;color:#fff;padding:14px 20px;font-size:23px;font-weight:800;letter-spacing:-.035em}
+.v5 .txt{padding:18px 20px 22px}
+.v5 .head{font-size:17px}
+.v5 .sub{font-size:14.5px;margin-top:5px}
+
+/* V6 Chip overlapping photo edge */
+.v6{padding:10px}
+.v6 .img{aspect-ratio:4/3;border-radius:18px}
+.v6 .chipwrap{margin-top:-26px;padding:0 14px;position:relative}
+.v6 .name{display:inline-block;vertical-align:top;background:#fff;border-radius:16px;padding:10px 16px;font-size:24px;font-weight:800;letter-spacing:-.035em;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.v6 .txt{padding:12px 12px 12px}
+.v6 .head{font-size:17px}
+.v6 .sub{font-size:14.5px;margin-top:5px}
+
+/* V7 Centered, round photo */
+.v7{padding:26px 22px 24px;text-align:center}
+.v7 .img{width:62%;aspect-ratio:1/1;border-radius:50%;margin:0 auto;box-shadow:0 0 0 6px #f3f3f1}
+.v7 .name{font-size:27px;font-weight:800;letter-spacing:-.04em;margin-top:18px}
+.v7 .head{font-size:16px;margin-top:10px;font-weight:600}
+.v7 .sub{font-size:14px;margin-top:4px}
+
+/* V8 Horizontal split */
+.row.wide{grid-template-columns:repeat(auto-fill,minmax(420px,1fr))}
+.v8{display:grid;grid-template-columns:42% 1fr;padding:10px;gap:0;min-height:210px}
+.v8 .img{border-radius:18px;height:100%}
+.v8 .txt{padding:14px 12px 12px 18px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.v8 .name{font-size:26px;font-weight:800;letter-spacing:-.04em;line-height:1.02}
+.v8 .head{font-size:15.5px}
+.v8 .sub{font-size:13.5px;margin-top:4px}
+
+/* V9 Tech/dev mono label */
+.v9{padding:12px;background:#fff}
+.v9 .bar{display:flex;gap:8px;height:44px;justify-content:space-between;align-items:center;padding:4px 6px 12px}
+.v9 .name{font-family:"Space Grotesk",Inter,sans-serif;font-size:24px;font-weight:700;letter-spacing:-.03em}
+.v9 .tag{flex:none;white-space:nowrap;margin-left:8px;font-family:"Space Grotesk",monospace;font-size:11px;font-weight:500;color:#1a7f4b;background:#e8f6ee;border-radius:6px;padding:4px 7px}
+.v9 .img{aspect-ratio:4/3;border-radius:14px}
+.v9 .txt{padding:14px 6px 6px;border-top:1px dashed #e3e3e3;margin-top:12px}
+.v9 .head{font-size:17px}
+.v9 .sub{font-size:14.5px;margin-top:5px}
+
+/* V10 Soft tinted frame */
+.v10{padding:10px;background:linear-gradient(180deg,#fff 0%,#fff 100%)}
+.v10 .frame{background:#f4f2ee;border-radius:20px;padding:14px 14px 0;overflow:hidden}
+.v10 .name{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a8579;display:none}
+.v10 .big{font-size:30px;font-weight:800;letter-spacing:-.045em;line-height:1;padding:4px 4px 14px}
+.v10 .img{aspect-ratio:16/11;border-radius:14px 14px 0 0}
+.v10 .txt{padding:16px 10px 10px}
+.v10 .head{font-size:17px}
+.v10 .sub{font-size:14.5px;margin-top:5px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Card design versions</h1>
+  <p id="intro">10 layouts. Image sits inside a white card, head on one line, subhead max two lines, app name as the focus. Each version shows 4 sample cards; open "all 15" to see the full set in that version.</p>
+</header>
+<nav id="nav"></nav>
+<main id="main"></main>
+<script>
+const VERSIONS=[
+ {n:1,t:"Stack",d:"Photo inset at top, big bold name, head, subhead."},
+ {n:2,t:"Name on photo",d:"Name in large white type on the photo, text block below."},
+ {n:3,t:"Editorial serif",d:"Name in a large serif above the photo, magazine feel."},
+ {n:4,t:"App listing",d:"App-icon crop next to the name, like an App Store row."},
+ {n:5,t:"Name band",d:"Solid black band carries the name between photo and copy."},
+ {n:6,t:"Floating chip",d:"Name in a white chip overlapping the photo edge."},
+ {n:7,t:"Centered round",d:"Round photo, centered name and copy. Calm and symmetric."},
+ {n:8,t:"Horizontal split",d:"Wide card, photo left, name and copy right."},
+ {n:9,t:"Developer tag",d:"Grotesk name with a small 'Flair-powered' tag, dashed divider."},
+ {n:10,t:"Tinted frame",d:"Warm tinted frame holds the name and photo, copy on white."}
+];
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function card(v,c){
+ const I=`style="background-image:url('${c.image}')"`, N=esc(c.name), H=esc(c.head), S=esc(c.sub);
+ const T=`<div class="txt"><div class="head">${H}</div><div class="sub">${S}</div></div>`;
+ switch(v){
+  case 1: return `<div class="card v1"><div class="img" ${I}></div><div class="txt"><div class="name">${N}</div><div class="head">${H}</div><div class="sub">${S}</div></div></div>`;
+  case 2: return `<div class="card v2"><div class="imgwrap"><div class="img" ${I}></div><div class="name">${N}</div></div>${T}</div>`;
+  case 3: return `<div class="card v3"><div class="name">${N}</div><div class="img" ${I}></div><div class="head">${H}</div><div class="sub">${S}</div></div>`;
+  case 4: return `<div class="card v4"><div class="top"><div class="icon img" ${I}></div><div><div class="name">${N}</div><div class="kicker">Powered by Flair</div></div></div><div class="img" ${I}></div>${T}</div>`;
+  case 5: return `<div class="card v5"><div class="img" ${I}></div><div class="band">${N}</div>${T}</div>`;
+  case 6: return `<div class="card v6"><div class="img" ${I}></div><div class="chipwrap"><div class="name">${N}</div></div>${T}</div>`;
+  case 7: return `<div class="card v7"><div class="img" ${I}></div><div class="name">${N}</div><div class="head">${H}</div><div class="sub">${S}</div></div>`;
+  case 8: return `<div class="card v8"><div class="img" ${I}></div><div class="txt"><div class="name">${N}</div><div><div class="head">${H}</div><div class="sub">${S}</div></div></div></div>`;
+  case 9: return `<div class="card v9"><div class="bar"><div class="name">${N}</div><div class="tag">+ Flair</div></div><div class="img" ${I}></div>${T}</div>`;
+  case 10: return `<div class="card v10"><div class="frame"><div class="big">${N}</div><div class="img" ${I}></div></div>${T}</div>`;
+ }
+}
+function fit(){ // keep every head on one line: shrink font until it fits
+ document.querySelectorAll('.head,.name,.big').forEach(h=>{h.style.fontSize='';let s=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>h.clientWidth+0.5&&s>11){s-=0.5;h.style.fontSize=s+'px';}});
+}
+fetch('/cards.json').then(r=>r.json()).then(cards=>{
+ const q=new URLSearchParams(location.search), only=parseInt(q.get('v'));
+ const nav=document.getElementById('nav');
+ nav.innerHTML=`<a href="/designs" class="${only?'':'on'}">All versions</a>`+VERSIONS.map(v=>`<a href="/designs?v=${v.n}" class="${only===v.n?'on':''}">V${v.n} ${v.t}</a>`).join('');
+ const sample=[1,4,9,13].map(i=>cards.find(c=>c.id===i));
+ const list=only?VERSIONS.filter(v=>v.n===only):VERSIONS;
+ if(only) document.getElementById('intro').textContent=`V${only} applied to all ${cards.length} cards.`;
+ document.getElementById('main').innerHTML=list.map(v=>`<section id="v${v.n}"><h2><span>V${v.n}</span>${v.t}${only?'':`<a href="/designs?v=${v.n}">all 15 &rarr;</a>`}</h2><p class="desc">${v.d}</p><div class="row${v.n===8?' wide':''}">${(only?cards:sample).map(c=>card(v.n,c)).join('')}</div></section>`).join('')+'<div style="height:80px"></div>';
+ (document.fonts?document.fonts.ready:Promise.resolve()).then(fit);
+ addEventListener('resize',fit);
+});
+</script>
+</body>
+</html>
