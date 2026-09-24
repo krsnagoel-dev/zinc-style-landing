@@ -48,13 +48,13 @@ const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&qu
 const q=new URLSearchParams(location.search),all=q.get('set')==='all',is916=q.get('r')==='916';
 if(is916)document.body.classList.add('r916');
 const link=(k,v)=>{const p=new URLSearchParams(q);if(v)p.set(k,v);else p.delete(k);const s=p.toString();return '/cards'+(s?'?'+s:'');};
-document.getElementById('set').innerHTML=`<a href="${link('set','')}" class="${all?'':'on'}">15 selected</a><a href="${link('set','all')}" class="${all?'on':''}">All 27</a>`;
+document.getElementById('set').innerHTML=`<a href="${link('set','')}" class="on">All 18</a>`;
 document.getElementById('ratio').innerHTML=`<a href="${link('r','')}" class="${is916?'':'on'}">4:5</a><a href="${link('r','916')}" class="${is916?'on':''}">9:16</a>`;
 function fit(){document.querySelectorAll('.one').forEach(h=>{h.style.fontSize='';let s=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>h.clientWidth+.5&&s>10){s-=.5;h.style.fontSize=s+'px';}});}
 fetch('/cards.json').then(r=>r.json()).then(data=>{
  const cards=all?data:data.filter(c=>c.featured);
  document.getElementById('intro').textContent=`${cards.length} cards. Final layout: app name on top, thin phone frame, copy centered on a glass card. Copy and images come from cards.json.`;
- document.getElementById('grid').innerHTML=cards.map(c=>`<div class="card" style="background:linear-gradient(180deg,${c.background.from},${c.background.to})"><div class="name one">${esc(c.name)}</div><div class="phone"><div class="ph" style="background-image:url('${c.image}')"></div></div><div class="glass"><div class="h one">${esc(c.head)}</div><div class="sub">${esc(c.sub)}</div></div></div>`).join('');
+ document.getElementById('grid').innerHTML=cards.map(c=>`<div class="card" style="background:linear-gradient(180deg,${c.background.from},${c.background.to})"><div class="name one">${esc(c.name)}</div><div class="phone"><div class="ph" style="background-image:url('${c.image}')"></div></div><div class="glass"><div class="h${c.line?'':' one'}">${esc(c.line||c.head)}</div>${c.sub?`<div class="sub">${esc(c.sub)}</div>`:''}</div></div>`).join('');
  (document.fonts?document.fonts.ready:Promise.resolve()).then(fit);addEventListener('resize',fit);
 });
 </script>
