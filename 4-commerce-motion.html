@@ -39,8 +39,8 @@ const scenes={agent:['AI agent','Find something useful for my trip.','Found a go
 const mosaic=document.querySelector('.mosaic');
 const starting=[...mosaic.querySelectorAll('img')];
 const imageThumb='https://flair-preview.vercel.app/card-images/sneaker-200.webp';
-const tags={'sneaker-200.webp':'Color · blue','plant-200.webp':'Indoor plant','fragrance-200.webp':'50 ml','camping-200.webp':'Outdoor gear','skin-200.webp':'Skin care'};
-function decorate(img,i){const cell=document.createElement('div');cell.className='mosaic-cell';img.replaceWith(cell);cell.append(img);const name=img.src.split('/').pop();if(tags[name]&&i%9===0){const badge=document.createElement('span');badge.className='mosaic-attribute';badge.textContent=tags[name];badge.style.animationDelay=((i%13)*-.39)+'s';cell.append(badge)}return cell}
+const tags={'sneaker-200.webp':'Color · blue','plant-200.webp':'Indoor plant','fragrance-200.webp':'50 ml','camping-200.webp':'Outdoor gear','skin-200.webp':'Skin care','pet-200.webp':'Pet care','gift-200.webp':'Gift idea','travel-200.webp':'Travel','home-200.webp':'Home','fitness-200.webp':'Fitness','hair-200.webp':'Hair care','wedding-200.webp':'Wedding'};
+function decorate(img,i){const cell=document.createElement('div');cell.className='mosaic-cell';img.replaceWith(cell);cell.append(img);const name=img.src.split('/').pop();if(tags[name]&&i%3===0){const badge=document.createElement('span');badge.className='mosaic-attribute';badge.textContent=tags[name];badge.style.animationDelay=((i%13)*-.39)+'s';cell.append(badge)}return cell}
 starting.forEach(decorate);
 /* At nine columns, complete the last row before duplicating the strip. */
 if(matchMedia('(max-width:560px)').matches){[...mosaic.children].slice(0,6).forEach(c=>mosaic.append(c.cloneNode(true)))}
